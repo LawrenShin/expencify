@@ -1,20 +1,22 @@
 import React from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Create from './components/create/Create.js';
 import Edit from './components/edit/Edit.js';
 import Help from './components/help/Help.js';
+import NotFound from './404.js';
 
 const Root = () => <h1>This is root</h1>;
 
 const App = () => (
     <Router>
-        <div>
+        <Switch>
             <Route exact path="/" component={Root} />
-            <Route strict path="/create" component={Create} />
-            <Route strict path="/edit" component={Edit} />
-            <Route strict path="/help" component={Help} />
-        </div>
+            <Route path="/create" component={Create} />
+            <Route path="/edit" component={Edit} />
+            <Route path="/help" component={Help} />
+            <Route component={NotFound} />
+        </Switch>
     </Router>
 );
 
