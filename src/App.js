@@ -1,28 +1,11 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-
-import Create from './components/create/Create.js';
-import Edit from './components/edit/Edit.js';
-import Help from './components/help/Help.js';
-import NotFound from './404.js';
-import Header from './components/header/Header.js';
 import './App.css';
-
-const Root = () => <h1>This is root</h1>;
+import AppRouter from './routes/AppRouter.js';
 
 const App = () => (
-    <Router>
-        <div>
-            <Header />
-            <Switch>
-                <Route exact path="/" component={Root} />
-                <Route path="/create" component={Create} />
-                <Route path="/edit" component={Edit} />
-                <Route path="/help" component={Help} />
-                <Route component={NotFound} />
-            </Switch>
-        </div>
-    </Router>
+    <div>
+        <AppRouter />
+    </div>
 );
 
 export default App;
