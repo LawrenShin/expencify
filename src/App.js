@@ -6,6 +6,7 @@ import Edit from './components/edit/Edit.js';
 import Help from './components/help/Help.js';
 import NotFound from './404.js';
 import Header from './components/header/Header.js';
+import './App.css';
 
 const Root = () => <h1>This is root</h1>;
 
