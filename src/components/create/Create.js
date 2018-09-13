@@ -1,7 +1,11 @@
 import React from 'react';
+import ExpenceForm from './../expence_form/ExpenceForm';
 
 const Create = () => (
-    <h1>This is create page</h1>
+    <div>
+        <h1>Add expence</h1>
+        <ExpenceForm />
+    </div>
 );
 
 export default Create;
