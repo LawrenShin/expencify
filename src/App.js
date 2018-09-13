@@ -1,15 +1,23 @@
 import React from 'react';
 import './App.css';
+import { Provider } from 'react-redux';
 import AppRouter from './routes/AppRouter.js';
-import PlayGround from './PlayGround';
-import Reducers from './Reducers';
+import configureStore from './store/configureStore';
+//actions
+import { addExpence } from './actions/expences';
+
+const store = configureStore();
+
+store.dispatch( addExpence({ description: 'water bill', amount: 250, createdAt: 5000 }) );
+store.dispatch( addExpence({ description: 'gas bill', amount: 77, createdAt: 15000 }) );
+store.dispatch( addExpence({ description: 'Migration', amount: 70000 }) );
+store.dispatch( addExpence({ amount: 8080 }) );
 
 
 const App = () => (
-    <div>
+    <Provider store={store}>
         <AppRouter />
-        <Reducers />
-    </div>
+    </Provider>
 );
 
 export default App;
