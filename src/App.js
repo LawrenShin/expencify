@@ -11,7 +11,6 @@ const store = configureStore();
 store.dispatch( addExpence({ description: 'water bill', amount: 250, createdAt: 5000 }) );
 store.dispatch( addExpence({ description: 'gas bill', amount: 77, createdAt: 15000 }) );
 store.dispatch( addExpence({ description: 'Migration', amount: 70000 }) );
-store.dispatch( addExpence({ amount: 8080 }) );
 
 
 const App = () => (
