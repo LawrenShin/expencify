@@ -4,7 +4,7 @@ import numeral from 'numeral';
 
 const ExpensesSummary = (props) => {
   let totalAmount = 0, totalCount, expenseWord;
-  if(props.expenses){
+  if(props.expenses && props.expenses.length){
     totalCount = props.expenses.length;
     totalAmount = props.expenses.map((ex) => ex.amount).reduce((accumulator, current) => accumulator + current);
     totalAmount = numeral(totalAmount / 100).format('$0,0.00');
@@ -13,15 +13,9 @@ const ExpensesSummary = (props) => {
 
   return(
     <div>
-      <p><strong>Sum is {totalAmount} on {totalCount} {expenseWord} in total</strong></p>
+      {totalAmount ? <p><strong>Sum is {totalAmount} on {totalCount} {expenseWord} in total</strong></p> : <p>No expenses listed.</p>}
     </div>
   );
 }
 
-const mapStateToProps = (state) => {
-  return{
-    expenses: state.expences
-  }
-}
-
-export default connect(mapStateToProps)(ExpensesSummary);
+export default ExpensesSummary;
