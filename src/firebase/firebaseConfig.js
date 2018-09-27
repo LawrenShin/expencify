@@ -1,10 +1,10 @@
 const config = {
-  apiKey: process.env.apiKey,
-  authDomain: process.env.authDomain,
-  databaseURL: process.env.databaseURL,
-  projectId: process.env.projectId,
-  storageBucket: process.env.storageBucket,
-  messagingSenderId: process.env.messagingSenderId
+  apiKey: "AIzaSyAJVuRHNNqLSxuBxLOKAF6-aRAp6YaN_3w",
+  authDomain: "handle-expenses.firebaseapp.com",
+  databaseURL: "https://handle-expenses.firebaseio.com",
+  projectId: "handle-expenses",
+  storageBucket: "handle-expenses.appspot.com",
+  messagingSenderId: "238155964891"
 };
 
 export default config;
