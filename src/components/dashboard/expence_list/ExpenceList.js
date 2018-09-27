@@ -5,16 +5,15 @@ import selectExpences from '../../../selectors/expences';
 import ExpensesSummary from './ExpensesSummary';
 
 const ExpenceList = (props) => {
-  console.log(props);
   return(
     <div>
       <h1>Expence list</h1>
+      <ExpensesSummary expenses={props.expences} />
       <ul>
         {props.expences.map((expence) => {
           return <ExpenceListItem key={expence.id} {...expence} /> 
         })}
       </ul>
-      <ExpensesSummary expenses={props.expences} />
     </div>
   );
 }
