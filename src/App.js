@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import AppRouter from './routes/AppRouter.js';
 import configureStore from './store/configureStore';
 //actions
-import { addExpence } from './actions/expences';
+// import { startSetExpenses } from './actions/expences';
 import './firebase/firebase';
 
 const store = configureStore();

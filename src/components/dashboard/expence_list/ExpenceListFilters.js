@@ -25,7 +25,6 @@ class ExpenceListFilters extends React.Component{
   }
 
   onDatesChange = ({ startDate, endDate }) => {
-    console.log(startDate);
     this.props.dispatch(setStartDate(startDate));
     this.props.dispatch(setEndDate(endDate));
   }
