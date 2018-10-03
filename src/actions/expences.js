@@ -3,7 +3,7 @@ import database from '../firebase/firebase';
 
 //add_expense
 export const addExpence = (expense) => ({
-  type: 'ADD_EXPENCE',
+  type: 'ADD_EXPENSE',
   expense
 });
 
@@ -52,12 +52,22 @@ export const startSetExpenses = () => {
 };
 
 //remove expence
-export const removeExpence = ({ id } = {}) => ({
-  type: 'REMOVE_EXPENCE',
+export const removeExpense = ({ id } = {}) => ({
+  type: 'REMOVE_EXPENSE',
   expence: {
     id: id
   }
 });
+
+export const startRemoveExpense = ({id} = {}) => {
+  return (dispatch) => {
+    const expenseToRemove = {path: `expenses/${id}`, id};
+    return database.ref(expenseToRemove.path).remove().then(() => {
+      dispatch(removeExpense(expenseToRemove));
+    });
+  }
+}
+
 // edit expence
 export const editExpence = ( id, updates ) => ({
   type: 'EDIT_EXPENCE',

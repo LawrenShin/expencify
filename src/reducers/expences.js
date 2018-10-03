@@ -2,9 +2,9 @@ const expensesReducerDefaultState = [];
 
 const expensesReducer = (state = expensesReducerDefaultState, action) => {
   switch (action.type){
-    case 'ADD_EXPENCE':
+    case 'ADD_EXPENSE':
       return [...state, action.expense];
-    case 'REMOVE_EXPENCE':
+    case 'REMOVE_EXPENSE':
       return state.filter(expence => expence.id !== action.expence.id);
     case 'EDIT_EXPENCE':
       return state.map((expence) => {
