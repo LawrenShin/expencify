@@ -3,10 +3,8 @@ import {connect} from 'react-redux';
 import ExpenceListItem from './ExpenceListItem';
 import selectExpences from '../../../selectors/expences';
 import ExpensesSummary from './ExpensesSummary';
-import {startSetExpenses} from '../../../actions/expences';
 
 const ExpenceList = (props) => {
-  startSetExpenses();
   return(
     <div>
       <h1>Expence list</h1>
