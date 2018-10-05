@@ -69,8 +69,17 @@ export const startRemoveExpense = ({id} = {}) => {
 }
 
 // edit expence
-export const editExpence = ( id, updates ) => ({
-  type: 'EDIT_EXPENCE',
+export const editExpense = ( {id, updates} ) => ({
+  type: 'EDIT_EXPENSE',
   id,
   updates
 });
+
+export const startEditExpense = (id, updates) => {
+  return (dispatch) => {
+    const expenseToUpdate = {path: `expenses/${id}`, id, updates};
+    return database.ref(expenseToUpdate.path).update(expenseToUpdate.updates).then(() => {
+      dispatch(editExpense(expenseToUpdate));
+    })
+  }
+}
