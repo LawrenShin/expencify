@@ -8,7 +8,7 @@ const ExpenceListItem = ({ dispatch, id, description, amount, createdAt, note })
     <li>
       <NavLink to={`/edit/${id}`} ><h3>{description}</h3></NavLink>
       <p>
-        <span>{numeral(amount / 100).format('$0,0.00')}</span><br/>
+        <span>&#8381;{numeral(amount / 100).format('0,0.00')}</span><br/>
         <span>{moment(createdAt).format('Do/MMM/YYYY')}</span>
         <span>{note}</span>
       </p>

@@ -2,22 +2,6 @@ import React from 'react';
 import { createStore, combineReducers} from 'redux';
 import uuid from 'uuid';
 
-const demoState = {
-  expenses: [{
-    id: 'testinId',
-    description: 'January rent',
-    note: 'This was the final payment for that address',
-    amount: 54500,
-    createdAt: 0
-  }],
-  filters: {
-    text: 'rent',
-    sortBy: 'amount',
-    startDate: undefined,
-    endDate: undefined
-  }
-};
-
 const expensesReducerDefaultState = [];
 const filtersReducerDefaultState = { text: '', sortBy: 'date', startDate: undefined, endDate: undefined};
 
@@ -153,20 +137,7 @@ store.subscribe(() => {
   console.log(visibleExpenses);
 });
 
-const rent = store.dispatch( addExpence({ description: 'Rent', amount: 100, createdAt: -21000 }) );
-const cofee = store.dispatch( addExpence({ description: 'Coffee', amount: 300, createdAt: -1000 }) );
-// store.dispatch( removeExpence({ id: rent.expence.id }) );
-// store.dispatch( editExpence( cofee.expence.id, { amount: 500 } ) );
-// //filters
-// store.dispatch( setTextFilter('rent') );
-// store.dispatch( setTextFilter() );
-
 store.dispatch(sortByAmount());
-
-// store.dispatch(setStartDate(1000));
-// store.dispatch(setStartDate());
-// store.dispatch(setEndDate());
-
 
 const Reducers = () => {
   return (

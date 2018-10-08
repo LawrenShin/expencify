@@ -8,7 +8,8 @@ export const addExpence = (expense) => ({
 });
 
 export const startAddExpense = (expenseData = {}) => {
-  return (dispatch) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
     const {
       description,
       note,
@@ -17,7 +18,7 @@ export const startAddExpense = (expenseData = {}) => {
     } = expenseData;
     const expense = { description, note, amount, createdAt };
 
-    database.ref('expenses').push(expense).then((ref) => {
+    return database.ref(`users/${uid}/expenses`).push(expense).then((ref) => {
       dispatch(addExpence({
         id: ref.key,
         description: expense.description,
@@ -37,8 +38,9 @@ export const setExpenses = (expenses) => (
 );
 
 export const startSetExpenses = () => {
-  return (dispatch) => {
-    return database.ref('expenses').once('value').then((snapshot) => {
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    return database.ref(`users/${uid}/expenses`).once('value').then((snapshot) => {
       const expenses = [];
       snapshot.forEach((child) => {
         expenses.push({
@@ -54,14 +56,15 @@ export const startSetExpenses = () => {
 //remove expence
 export const removeExpense = ({ id } = {}) => ({
   type: 'REMOVE_EXPENSE',
-  expence: {
+  expense: {
     id: id
   }
 });
 
 export const startRemoveExpense = ({id} = {}) => {
-  return (dispatch) => {
-    const expenseToRemove = {path: `expenses/${id}`, id};
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    const expenseToRemove = {path: `users/${uid}/expenses/${id}`, id};
     return database.ref(expenseToRemove.path).remove().then(() => {
       dispatch(removeExpense(expenseToRemove));
     });
@@ -76,8 +79,9 @@ export const editExpense = ( {id, updates} ) => ({
 });
 
 export const startEditExpense = (id, updates) => {
-  return (dispatch) => {
-    const expenseToUpdate = {path: `expenses/${id}`, id, updates};
+  return (dispatch, getState) => {
+    const uid = getState().auth.uid;
+    const expenseToUpdate = {path: `users/${uid}/expenses/${id}`, id, updates};
     return database.ref(expenseToUpdate.path).update(expenseToUpdate.updates).then(() => {
       dispatch(editExpense(expenseToUpdate));
     })
