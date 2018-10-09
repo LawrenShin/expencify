@@ -1,9 +1,83 @@
+.box-layout {
+  background-image: url("/images/city-bg.jpg");
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center; }
+
+.box-layout__box {
+  background: rgba(255, 255, 255, 0.85);
+  border-radius: 3px;
+  text-align: center;
+  width: 25rem;
+  padding: 3.2rem 1.6rem;
+  border-radius: 5px; }
+
+.box-layout__title {
+  margin: 0 0 1.6rem 0;
+  line-height: 1; }
+
+.button {
+  padding: 10px 20px;
+  font-size: 1.8rem;
+  background-color: #1c88bf;
+  color: white;
+  border: none;
+  font-weight: 300;
+  display: inline-block;
+  text-decoration: none;
+  line-height: 1; }
+
+.button--link {
+  background: none; }
+
+.header {
+  background: #364051; }
+
+.header__content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.2rem 0; }
+
+.header__title {
+  color: white;
+  text-decoration: none; }
+  .header__title h1 {
+    margin: 0; }
+
+.content-container {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 0 1.6rem; }
+
+.page-header {
+  background-color: #f7f7f7;
+  padding: 3.2rem 0;
+  margin-bottom: 3.2rem; }
+
+.page-header-title {
+  font-weight: 100;
+  margin: 0; }
+  .page-header-title span {
+    font-weight: 900; }
+
+.page-header__actions {
+  margin-top: 3.2rem; }
+
 html {
   font-size: 62.5%; }
 
 body {
+  color: #333333;
   font-family: Arial, Helvetica, sans-serif;
-  font-size: 2rem; }
+  font-size: 1.6rem;
+  line-height: 1.6rem;
+  padding: 0;
+  margin: 0;
+  border-radius: 0; }
 
 button {
   cursor: pointer; }

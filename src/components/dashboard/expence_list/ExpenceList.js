@@ -7,7 +7,6 @@ import ExpensesSummary from './ExpensesSummary';
 const ExpenceList = (props) => {
   return(
     <div>
-      <h1>Expence list</h1>
       <ExpensesSummary expenses={props.expences} />
       <ul>
         {props.expences.map((expence) => {
