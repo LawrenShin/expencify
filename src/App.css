@@ -1,5 +1,5 @@
 .box-layout {
-  background-image: url("/images/city-bg.jpg");
+  background-image: url("/images/city-bg-min.jpg");
   background-size: cover;
   height: 100vh;
   width: 100vw;
@@ -33,6 +33,10 @@
 .button--link {
   background: none; }
 
+.button-secondary {
+  background: #888;
+  margin-left: 1.6rem; }
+
 .header {
   background: #364051; }
 
@@ -49,7 +53,7 @@
     margin: 0; }
 
 .content-container {
-  max-width: 80rem;
+  max-width: 100rem;
   margin: 0 auto;
   padding: 0 1.6rem; }
 
@@ -67,6 +71,93 @@
 .page-header__actions {
   margin-top: 3.2rem; }
 
+.input-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.6rem; }
+  @media (min-width: 45rem) {
+    .input-group {
+      flex-direction: row;
+      margin-bottom: 3.2rem; }
+      .input-group .page-header-title {
+        line-height: 1; } }
+
+.input-group__item {
+  margin-bottom: 1.2rem;
+  margin-right: 1.2rem; }
+  @media (min-width: 45rem) {
+    .input-group__item {
+      margin-right: 1.2rem;
+      margin: 0 1.2rem 0 0; } }
+
+.text-input, .select, .textarea {
+  border: 1px solid #cacccd;
+  padding: 1.2rem;
+  font-size: 18px;
+  font-weight: 300; }
+
+.textarea {
+  height: 10rem; }
+
+@media (min-width: 45rem) {
+  .show-for-mobile {
+    display: none; } }
+
+@media (max-width: 44.99rem) {
+  .show-for-desktop {
+    display: none; } }
+
+.form {
+  display: flex;
+  flex-direction: column; }
+  .form > * {
+    margin-bottom: 1.6rem; }
+
+.form__error {
+  margin: 0 0 1.6rem 0;
+  font-style: italic; }
+
+.list-header {
+  background: #f7f7f7;
+  border: 1px solid #e5e5e5;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  padding: 1.2rem 1.6rem; }
+
+.list-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e5e5e5;
+  border-top: none;
+  color: #333333;
+  padding: 1.2rem;
+  text-decoration: none;
+  transition: background .3s ease; }
+  .list-item:hover {
+    background: #f7f7f7; }
+  @media (min-width: 45rem) {
+    .list-item {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: 1.6rem;
+      align-items: center; } }
+
+.list-item__title {
+  margin: 0;
+  word-break: break-all; }
+
+.list-item__sub-title {
+  color: #666;
+  font-size: 1.4rem; }
+
+.list-item__sub-title {
+  margin: 1.2rem 0 0 0; }
+  @media (min-width: 45rem) {
+    .list-item__sub-title {
+      margin: 0;
+      padding-left: 1.2rem; } }
+
 html {
   font-size: 62.5%; }
 
@@ -78,6 +169,10 @@ body {
   padding: 0;
   margin: 0;
   border-radius: 0; }
+
+ul {
+  padding: 0;
+  margin: 0; }
 
 button {
   cursor: pointer; }
