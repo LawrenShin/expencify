@@ -9,6 +9,7 @@ import LoginPage from '../components/login/LoginPage';
 import createHistory from 'history/createBrowserHistory';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
+import Weather from './../components/weather/Weather';
 
 export const history = createHistory();
 
@@ -20,6 +21,7 @@ const AppRouter = () => (
                 <PrivateRoute path="/create" component={Create} />
                 <PrivateRoute path="/edit/:id" component={Edit} />
                 <PrivateRoute path="/dashboard" component={Dashboard} />
+                <PrivateRoute path="/weather" component={Weather} />
                 <Route component={NotFound} />
             </Switch>
         </div>
