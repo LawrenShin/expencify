@@ -1,14 +1,13 @@
 import React from 'react';
-import CityForm from './CityForm';
+import uuid from 'uuid';
 
-const CityList = () => {
+const CityList = ({dispatch, state}) => {
+  console.log(state);
   return(
-    <div>
-      <CityForm />
+    <div className="city__list">
       <ul>
-        <li>city list</li>
-        <li>city list2</li>
-        <li>city list3</li>
+        {state.cities.map((city) => { return <li key={uuid()}>{city.name}</li> })}
+        {!state.cities.length && <p>No cities</p>}
       </ul>
     </div>
   );
