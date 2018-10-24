@@ -13,11 +13,16 @@ export default class CityForm extends React.Component{
 
   render(){
     return(
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="city">Provide city name</label>
-        <input type="text" name="city"></input>
-        <button>Add city</button>
-      </form>
+      <div className="page-header__actions">
+        <form onSubmit={this.handleSubmit}>
+          <div className="input-group__item">
+            <input className="text-input" placeholder="Type city name" type="text" name="city"></input>
+          </div>
+          <div className="page-header__actions">
+            <button className="button">Add city</button>
+          </div>
+        </form>
+      </div>
     );
   }
 }

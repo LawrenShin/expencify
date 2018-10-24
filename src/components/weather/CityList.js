@@ -2,15 +2,18 @@ import React from 'react';
 import uuid from 'uuid';
 
 const CityList = ({dispatch, state}) => {
-  console.log(state);
-  return(
-    <div className="city__list">
-      <ul>
-        {state.cities.map((city) => { return <li key={uuid()}>{city.name}</li> })}
-        {!state.cities.length && <p>No cities</p>}
-      </ul>
-    </div>
-  );
+  if(!state.cities.length){
+    return <p>No cities</p>;
+  }else{
+    return(
+      <div>
+        <h3 className="list-header no_margin_bottom">List of cities</h3>
+        <ul className="city__list">
+          {state.cities.map((city) => { return <div key={uuid()}><a className="list-item" href="#">{city.name}</a></div> })}
+        </ul>
+      </div>
+    );
+  }
 };
 
 export default CityList;
