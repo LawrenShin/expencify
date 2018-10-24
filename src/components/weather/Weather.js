@@ -37,7 +37,7 @@ const Weather = (props) => {
     <div className="page-header">
       <div className="content-container">
         <div className="page-header-title">
-          <h1>Here you can add city to list and view their weather</h1>
+          <h1>Here you can add city to list and view weather in each one</h1>
           <CityForm triggerAddCity={this.handleSubmit} />
         </div>
       </div>

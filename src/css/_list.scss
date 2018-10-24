@@ -11,7 +11,7 @@
   margin-bottom: 0 !important;
 }
 
-.list-item{
+.list-item, .list-item__cities{
   display: flex;
   flex-direction: column;
   border: 1px solid darken($off-white, 7%);
@@ -30,7 +30,11 @@
     align-items: center;
   }
 }
-
+.list-item__cities:hover{
+  background: rgba($orange, 1);
+  color: white;
+  font-weight: 900;
+}
 .list-item-message{
   
 }

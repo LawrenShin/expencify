@@ -134,7 +134,7 @@
 .no_margin_bottom {
   margin-bottom: 0 !important; }
 
-.list-item {
+.list-item, .list-item__cities {
   display: flex;
   flex-direction: column;
   border: 1px solid #e5e5e5;
@@ -143,14 +143,19 @@
   padding: 1.2rem;
   text-decoration: none;
   transition: background .3s ease; }
-  .list-item:hover {
+  .list-item:hover, .list-item__cities:hover {
     background: #f7f7f7; }
   @media (min-width: 45rem) {
-    .list-item {
+    .list-item, .list-item__cities {
       flex-direction: row;
       justify-content: space-between;
       padding: 1.6rem;
       align-items: center; } }
+
+.list-item__cities:hover {
+  background: #ff9922;
+  color: white;
+  font-weight: 900; }
 
 .list-item__title {
   margin: 0;
