@@ -1,7 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import ExpenceForm from './../expence_form/ExpenceForm';
-import { editExpense, startRemoveExpense, startEditExpense } from './../../actions/expences';
+import { startRemoveExpense, startEditExpense } from './../../actions/expences';
 
 const Edit = (props) => {
     const id = props.expense[0].id;

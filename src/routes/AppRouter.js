@@ -10,6 +10,7 @@ import createHistory from 'history/createBrowserHistory';
 import PrivateRoute from './PrivateRoute';
 import PublicRoute from './PublicRoute';
 import Weather from './../components/weather/Weather';
+import WeatherCity from './../components/weather/WeatherCity';
 
 export const history = createHistory();
 
@@ -21,7 +22,8 @@ const AppRouter = () => (
                 <PrivateRoute path="/create" component={Create} />
                 <PrivateRoute path="/edit/:id" component={Edit} />
                 <PrivateRoute path="/dashboard" component={Dashboard} />
-                <PrivateRoute path="/weather" component={Weather} />
+                <PrivateRoute exact path="/weather" component={Weather} />
+                <PrivateRoute path="/weather/:name" component={WeatherCity} />
                 <Route component={NotFound} />
             </Switch>
         </div>

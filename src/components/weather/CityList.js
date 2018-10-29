@@ -1,7 +1,9 @@
 import React from 'react';
-import uuid from 'uuid';
+import CitiesListItem from './CityListItem';
+import moment from 'moment';
 
 const CityList = ({dispatch, state}) => {
+
   if(!state.cities.length){
     return <p>No cities</p>;
   }else{
@@ -9,7 +11,7 @@ const CityList = ({dispatch, state}) => {
       <div>
         <h3 className="list-header no_margin_bottom">List of cities</h3>
         <ul className="city__list">
-          {state.cities.map((city) => { return <div key={uuid()}><a className="list-item__cities" href="#">{city.name}</a></div> })}
+          {state.cities.map((city) => { return <CitiesListItem key={city.id} {...city} /> })}
         </ul>
       </div>
     );

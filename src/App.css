@@ -123,6 +123,11 @@
   margin: 0 0 1.6rem 0;
   font-style: italic; }
 
+.form__city {
+  display: flex;
+  align-items: baseline;
+  justify-content: center; }
+
 .list-header {
   background: #f7f7f7;
   border: 1px solid #e5e5e5;

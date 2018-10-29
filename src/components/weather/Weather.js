@@ -2,21 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import CityList from './CityList';
 import CityForm from './CityForm';
-import $ from 'jquery';
 import {startAddCity, startSetCities} from '../../actions/cities';
 
-const cityData = (cityName) => {
-  return $.ajax({
-    url: `http://api.openweathermap.org/data/2.5/weather?q=${cityName}&APPID=e8e3be60d5c61194ea01e5901af30333`,
-    method: 'POST',
-    format: 'json'
-  });
-}
-// const promisedCityData = cityData(cityName);
-// promisedCityData.done((res) => {
-//   console.log(res);
-// });
-// weather request
 const Weather = (props) => {
   
   if(!props.state.cities.length){

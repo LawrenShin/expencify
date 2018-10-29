@@ -10,6 +10,12 @@ const citiesReducer = (state = initialCityState, action) => {
       }
     case 'SET_CITIES':
       return [...state, ...action.cityList];
+    case 'UPDATE_CITY':
+      const newState = state.map((stateCity) => { 
+        if(stateCity.id === action.updated.id) return action.updated;
+        return stateCity;
+      });
+      return (newState);
     default:
       return state;
   }

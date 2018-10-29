@@ -14,7 +14,7 @@ export default class CityForm extends React.Component{
   render(){
     return(
       <div className="page-header__actions">
-        <form onSubmit={this.handleSubmit}>
+        <form onSubmit={this.handleSubmit} className="form__city">
           <div className="input-group__item">
             <input className="text-input" placeholder="Type city name" type="text" name="city"></input>
           </div>

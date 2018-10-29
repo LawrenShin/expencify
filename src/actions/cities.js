@@ -30,9 +30,29 @@ export const startSetCities = () => {
         return database.ref(`users/${uid}/cities`).once('value').then((snapshot) => {
             const cityList = [];
             snapshot.forEach((child) => {
-                cityList.push({ id: child.key, name:child.val() });
+                if(typeof child.val() === 'string'){
+                    cityList.push({ id: child.key, name:child.val() });
+                }else{
+                    cityList.push({ id: child.key, name:child.val().name });
+                }
             });
             dispatch(setCities(cityList));
         })
+    }
+}
+
+export const updateCity = (updated) => ({
+    type: 'UPDATE_CITY',
+    updated
+});
+
+export const startUpdateCity = (id, updates) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+
+        return database.ref(`users/${uid}/cities/${id}`).update(updates).then(() => {
+            const updated = {id, ...updates};
+            dispatch(updateCity(updated));
+        });
     }
 }
