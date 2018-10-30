@@ -1,0 +1,17 @@
+.weather__main{
+  text-align: center;
+}
+.weather_layout__temp{
+  display: grid;
+  text-align: center;
+  grid-template-rows: 100% 100%;
+}
+.weather_layout__description{
+  margin-top: 20px;
+}
+.weather_info__temp_max{
+  color: #f92;
+}
+.weather_info__temp_min{
+  color: #29c;
+}

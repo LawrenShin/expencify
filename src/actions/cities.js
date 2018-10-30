@@ -56,3 +56,18 @@ export const startUpdateCity = (id, updates) => {
         });
     }
 }
+
+export const removeCity = (id) => ({
+    type: 'REMOVE_CITY',
+    id
+})
+
+export const startRemoveCity = (cid) => {
+    return (dispatch, getState) => {
+        const uid = getState().auth.uid;
+
+        return database.ref(`users/${uid}/cities/${cid}`).remove().then(() => {
+            dispatch(removeCity(cid));
+        })
+    }
+}

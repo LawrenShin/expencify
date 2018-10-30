@@ -16,6 +16,8 @@ const citiesReducer = (state = initialCityState, action) => {
         return stateCity;
       });
       return (newState);
+    case 'REMOVE_CITY':
+      return state.filter((city) => (city.id !== action.id));
     default:
       return state;
   }
