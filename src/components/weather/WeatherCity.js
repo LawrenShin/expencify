@@ -17,8 +17,9 @@ const WeatherCity = (props) => {
 
         const promisedCityData = cityData(props.match.params.name);
         promisedCityData.fail((err) => {
-            error = err.responseJSON.message;
-            $('#no_data > p').text(`${error} on openweather.com`);
+            if(err){
+                $('#no_data > p').text(`${error} on openweather.com`);
+            }            
         });
         promisedCityData.done(({weather, main, wind, sys}) => {
             const updatedAt = moment().format();
